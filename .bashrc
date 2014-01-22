@@ -18,17 +18,13 @@ fi
 echo $OSTYPE | grep -q darwin
 if [ $? -eq 0 ]
 then
-    if [ -n "$PS1" ]
-    then
-        PROMPT_COMMAND='printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/~}"'
-        PS1="[\u@\h:\W]$ "
-    fi
+    PROMPT_COMMAND='printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/~}"'
 
     alias l.='ls -d .* -G'
     alias ll='ls -laF -G'
     alias ls='ls -G'
 fi
 
-
+PS1="[\u@\h:\W]$ "
 alias vi='vim'
 
