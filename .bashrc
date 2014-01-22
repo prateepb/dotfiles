@@ -25,6 +25,8 @@ then
     alias ls='ls -G'
 fi
 
+HISTTIMEFORMAT="%F %T "
 PS1="[\u@\h:\W]$ "
+
 alias vi='vim'
 
