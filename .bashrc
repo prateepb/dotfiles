@@ -12,6 +12,7 @@ if [ $? -eq 0 ]
 then
     alias l.='ls -d .* --color=auto'
     alias ll='ls -laF --color=auto'
+    alias lll='ls -laF --color=always | less -r'
     alias ls='ls --color=auto'
 fi
 
@@ -22,6 +23,7 @@ then
 
     alias l.='ls -d .* -G'
     alias ll='ls -laF -G'
+    alias lll='CLICOLOR_FORCE=true ls -laF -G | less -r'
     alias ls='ls -G'
 fi
 
