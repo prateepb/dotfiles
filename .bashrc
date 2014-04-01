@@ -25,6 +25,7 @@ then
     alias ll='ls -laF -G'
     alias lll='CLICOLOR_FORCE=true ls -laF -G | less -r'
     alias ls='ls -G'
+    alias md5sum='md5'
 fi
 
 EDITOR=vim
