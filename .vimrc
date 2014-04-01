@@ -1,0 +1,10 @@
+set nocompatible
+set autoindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set background=dark
+syntax enable
+set number
+set ruler
+set showcmd
