@@ -9,6 +9,19 @@ fi
 
 PATH=$PATH:$HOME/bin
 
+for DIR in $( ls $HOME/opt )
+do
+    if [ -d ${HOME}/opt/${DIR} ]
+    then
+        PATH=$PATH:${HOME}/opt/${DIR}
+    fi
+
+    if [ -d ${HOME}/opt/${DIR}/bin ]
+    then
+        PATH=$PATH:${HOME}/opt/${DIR}/bin
+    fi
+done
+
 export PATH
 
 # Start xflux
