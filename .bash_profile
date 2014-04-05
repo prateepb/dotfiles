@@ -10,6 +10,7 @@ fi
 PATH=$PATH:$HOME/bin
 
 if [ -d $HOME/opt ]
+then
     for DIR in $( ls $HOME/opt )
     do
         if [ -d ${HOME}/opt/${DIR} ]
