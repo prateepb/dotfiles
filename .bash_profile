@@ -25,6 +25,7 @@ then
     done
 fi
 
+PATH=$PATH:$(find $HOME/.gem/ruby/*/bin -type d)
 export PATH
 
 # Start xflux
