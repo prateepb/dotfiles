@@ -28,9 +28,10 @@ then
     alias md5sum='md5'
 fi
 
+alias vi='vim'
+which asciidoctor > /dev/null && alias asciidoc=$( which asciidoctor)
+
 EDITOR=vim
 HISTTIMEFORMAT="%F %T "
 PS1="[\u@\h:\W]$ "
-
-alias vi='vim'
 
