@@ -25,9 +25,9 @@ then
     done
 fi
 
-PATH=$PATH:$(find $HOME/.gem/ruby/*/bin -type d)
+PATH=$PATH:$(find $HOME/.gem/ruby/*/bin -type d > /dev/null 2>&1)
 export PATH
-which asciidoctor > /dev/null && alias asciidoc=$( which asciidoctor)
+which asciidoctor > /dev/null 2>&1 && alias asciidoc=$( which asciidoctor)
 
 # Start xflux
 if [ -n "$DISPLAY" ] && [ -x $HOME/bin/xflux ]
