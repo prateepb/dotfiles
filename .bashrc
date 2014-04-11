@@ -29,7 +29,6 @@ then
 fi
 
 alias vi='vim'
-which asciidoctor > /dev/null && alias asciidoc=$( which asciidoctor)
 
 EDITOR=vim
 HISTTIMEFORMAT="%F %T "

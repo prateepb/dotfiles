@@ -27,6 +27,7 @@ fi
 
 PATH=$PATH:$(find $HOME/.gem/ruby/*/bin -type d)
 export PATH
+which asciidoctor > /dev/null && alias asciidoc=$( which asciidoctor)
 
 # Start xflux
 if [ -n "$DISPLAY" ] && [ -x $HOME/bin/xflux ]
