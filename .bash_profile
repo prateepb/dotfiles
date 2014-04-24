@@ -7,7 +7,7 @@ fi
 
 # User specific environment and startup programs
 
-PATH=$PATH:$HOME/bin
+PATH=$HOME/bin:$PATH
 
 if [ -d $HOME/opt ]
 then
@@ -15,17 +15,17 @@ then
     do
         if [ -d ${HOME}/opt/${DIR} ]
         then
-            PATH=$PATH:${HOME}/opt/${DIR}
+            PATH=${HOME}/opt/${DIR}:$PATH
         fi
 
         if [ -d ${HOME}/opt/${DIR}/bin ]
         then
-            PATH=$PATH:${HOME}/opt/${DIR}/bin
+            PATH=${HOME}/opt/${DIR}/bin:$PATH
         fi
     done
 fi
 
-PATH=$PATH:$(find $HOME/.gem/ruby/*/bin -type d > /dev/null 2>&1)
+PATH=$(find $HOME/.gem/ruby/*/bin -type d 2> /dev/null):$PATH
 export PATH
 which asciidoctor > /dev/null 2>&1 && alias asciidoc=$( which asciidoctor)
 
