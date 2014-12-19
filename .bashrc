@@ -23,8 +23,6 @@ fi
 echo $OSTYPE | grep -q darwin
 if [ $? -eq 0 ]
 then
-    PROMPT_COMMAND='printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/~}"'
-
     alias l.='ls -d .* -G'
     alias ll='ls -laF -G'
     alias lll='CLICOLOR_FORCE=true ls -laF -G | less -r'
@@ -39,7 +37,20 @@ alias vi='vim'
 
 EDITOR=vim
 HISTTIMEFORMAT="%F %T "
-PS1="[\u@\h:\W]$ "
+if [ $UID -eq 0 ]; then
+    PS1='\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+fi
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
 
 # Less Colors for Man Pages
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
