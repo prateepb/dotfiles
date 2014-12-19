@@ -5,6 +5,10 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+if [ -f /etc/skel/.bashrc ]; then
+	. /etc/skel/.bashrc
+fi
+
 # User specific aliases and functions
 
 echo $OSTYPE | grep -q linux
