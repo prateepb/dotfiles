@@ -72,3 +72,5 @@ export LESS_ZZZZZZZZZZ=$'\E[0m'           # end mode
 
 export PACKER_CACHE_DIR="${HOME}/tmp/packer_cache"
 
+function randpw { dd if=/dev/urandom bs=1 count=30 2>/dev/null | base64; }
+
