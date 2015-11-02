@@ -14,8 +14,26 @@ if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
 
-EDITOR=vim
+# ----------------------------------------------------------------
+# History
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# Add timestamp
 HISTTIMEFORMAT="%F %T "
+
+# ----------------------------------------------------------------
+# Prompt
+
 if [ $UID -eq 0 ]; then
     PS1='\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
@@ -31,17 +49,7 @@ xterm*|rxvt*)
     ;;
 esac
 
-# Less Colors for Man Pages
-export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
-export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
-export LESS_TERMCAP_me=$'\E[0m'           # end mode
-export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
-export LESS_TERMCAP_so=$'\E[38;5;196m'    # begin standout-mode - info box
-export LESS_TERMCAP_ue=$'\E[0m'           # end underline
-export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
-export LESS_ZZZZZZZZZZ=$'\E[0m'           # end mode
-
-export PACKER_CACHE_DIR="${HOME}/tmp/packer_cache"
+# ----------------------------------------------------------------
+# Misc Functions
 
 function randpw { dd if=/dev/urandom bs=1 count=30 2>/dev/null | base64; }
-
