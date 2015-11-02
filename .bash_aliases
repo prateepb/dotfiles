@@ -13,12 +13,12 @@ elif [[ "$OSTYPE" =~ "darwin" ]]; then
     alias ls='ls -G'
 fi
 
+if [[ "$OSTYPE" =~ "darwin" ]]; then
     alias md5sum='md5'
     alias screenlock='open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
 fi
 
-echo $DESKTOP_SESSION | grep -q gnome
-if [ $? -eq 0 ]
+if [[ "$DESKTOP_SESSION" =~ "gnome" ]]
 then
     alias screenlock='gnome-screensaver-command --activate'
 fi
