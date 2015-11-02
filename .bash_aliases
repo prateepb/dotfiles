@@ -1,21 +1,18 @@
 # .bash_aliases
 
-echo $OSTYPE | grep -q linux
-if [ $? -eq 0 ]
-then
-    alias l.='ls -d .* --color=auto'
+if [[ "$OSTYPE" =~ "darwin" && -x /usr/local/bin/gls && -x /usr/local/bin/gdircolors ]]; then
+    test -r ~/.dircolors && eval "$(gdircolors -b ~/.dircolors)" || eval "$(gdircolors -b)"
+    alias ll='gls -laF --color=auto'
+    alias ls='gls --color=auto'
+elif [[ -x /usr/bin/dircolors ]]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ll='ls -laF --color=auto'
-    alias lll='ls -laF --color=always | less -r'
     alias ls='ls --color=auto'
+elif [[ "$OSTYPE" =~ "darwin" ]]; then
+    alias ll='ls -laF -G'
+    alias ls='ls -G'
 fi
 
-echo $OSTYPE | grep -q darwin
-if [ $? -eq 0 ]
-then
-    alias l.='ls -d .* -G'
-    alias ll='ls -laF -G'
-    alias lll='CLICOLOR_FORCE=true ls -laF -G | less -r'
-    alias ls='ls -G'
     alias md5sum='md5'
     alias screenlock='open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
 fi
