@@ -8,11 +8,11 @@ esac
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+    . /etc/bashrc
 fi
 
 if [ -f /etc/skel/.bashrc ]; then
-	. /etc/skel/.bashrc
+    . /etc/skel/.bashrc
 fi
 
 # Add bash aliases.
