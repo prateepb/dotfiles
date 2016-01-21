@@ -23,6 +23,7 @@ fi
 # ----------------------------------------------------------------
 # Environment
 
+which -s brew && export BYOBU_PREFIX=$(brew --prefix)
 export EDITOR=vim
 
 # Less Colors for Man Pages
