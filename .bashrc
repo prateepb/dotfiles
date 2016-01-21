@@ -77,3 +77,9 @@ esac
 # Misc Functions
 
 function randpw { dd if=/dev/urandom bs=1 count=30 2>/dev/null | base64; }
+
+# OSX Specific
+if [[ "$OSTYPE" =~ "darwin" ]]; then
+    function hdi_mount_ro { hdiutil attach $1 -readonly; }
+    function hdi_mount_rw { hdiutil attach $1; }
+fi
