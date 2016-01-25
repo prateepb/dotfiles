@@ -17,7 +17,7 @@ fi
 
 # Add bash aliases.
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+    . ~/.dotfiles/.bash_aliases
 fi
 
 # ----------------------------------------------------------------
