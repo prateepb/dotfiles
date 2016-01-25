@@ -23,7 +23,11 @@ fi
 # ----------------------------------------------------------------
 # Environment
 
-which -s brew && export BYOBU_PREFIX=$(brew --prefix)
+# OSX Specific
+if [[ "$OSTYPE" =~ "darwin" ]]; then
+    which -s brew && export BYOBU_PREFIX=$(brew --prefix)
+fi
+
 export EDITOR=vim
 
 # Less Colors for Man Pages
