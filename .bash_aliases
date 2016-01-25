@@ -1,11 +1,11 @@
 # .bash_aliases
 
 if [[ "$OSTYPE" =~ "darwin" && -x /usr/local/bin/gls && -x /usr/local/bin/gdircolors ]]; then
-    test -r ~/.dircolors && eval "$(gdircolors -b ~/.dircolors)" || eval "$(gdircolors -b)"
+    test -r ~/.dotfiles/.dircolors && eval "$(gdircolors -b ~/.dotfiles/.dircolors)" || eval "$(gdircolors -b)"
     alias ll='gls -laF --color=auto'
     alias ls='gls --color=auto'
 elif [[ -x /usr/bin/dircolors ]]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    test -r ~/.dotfiles/.dircolors && eval "$(dircolors -b ~/.dotfiles/.dircolors)" || eval "$(dircolors -b)"
     alias ll='ls -laF --color=auto'
     alias ls='ls --color=auto'
 elif [[ "$OSTYPE" =~ "darwin" ]]; then
