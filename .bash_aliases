@@ -24,3 +24,11 @@ alias egrep='egrep --color=auto'
 alias jconsole_socks="jconsole -J-DsocksProxyHost=localhost -J-DsocksProxyPort=1080 127.0.0.1:1234 &"
 alias vi='vim'
 
+# Get week number
+alias week='date +%V'
+
+# Stopwatch
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
