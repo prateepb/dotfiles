@@ -16,11 +16,11 @@ if [ -f /etc/skel/.bashrc ]; then
 fi
 
 # Add bash aliases.
-if [ -f ~/.bash_aliases ]; then
+if [ -f ~/.dotfiles/.bash_aliases ]; then
     . ~/.dotfiles/.bash_aliases
 fi
 
-if [[ "$OSTYPE" =~ "darwin" && -f ~/.bash_aliases_osx ]]; then
+if [[ "$OSTYPE" =~ "darwin" && -f ~/.dotfiles/.bash_aliases_osx ]]; then
     . ~/.dotfiles/.bash_aliases_osx
 fi
 
