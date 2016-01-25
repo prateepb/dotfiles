@@ -13,13 +13,6 @@ elif [[ "$OSTYPE" =~ "darwin" ]]; then
     alias ls='ls -G'
 fi
 
-if [[ "$OSTYPE" =~ "darwin" ]]; then
-    alias finder_hide='defaults write com.apple.finder AppleShowAllFiles NO && killall Finder'
-    alias finder_show='defaults write com.apple.finder AppleShowAllFiles YES && killall Finder'
-    alias md5sum='md5'
-    alias screenlock='open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
-fi
-
 if [[ "$DESKTOP_SESSION" =~ "gnome" ]]
 then
     alias screenlock='gnome-screensaver-command --activate'
