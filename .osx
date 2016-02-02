@@ -229,6 +229,8 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 # Personal Additions
 ###############################################################################
 
+defaults write com.apple.menuextra.battery ShowPercent -string YES
+defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM  HH:mm"
 
 ###############################################################################
 # Kill affected applications
