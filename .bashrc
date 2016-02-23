@@ -66,10 +66,15 @@ HISTTIMEFORMAT="%F %T "
 # ----------------------------------------------------------------
 # Prompt
 
+GREEN="\[\e[01;32m\]"
+RED="\[\e[01;31m\]"
+BLUE="\[\e[01;34m\]"
+NO_COLOUR="\[\e[00m\]"
+
 if [ $UID -eq 0 ]; then
-    PS1='\[\033[01;31m\]$(prompt_status)\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1="${RED}\u@\h${NO_COLOUR}:${BLUE}\w${NO_COLOUR}\$ "
 else
-    PS1='\[\033[01;31m\]$(prompt_status)\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1="${GREEN}\u@\h${NO_COLOUR}:${BLUE}\w${NO_COLOUR}\$ "
 fi
 
 # If this is an xterm set the title to user@host:dir
