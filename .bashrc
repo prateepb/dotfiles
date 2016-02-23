@@ -86,7 +86,7 @@ xterm*|rxvt*)
     ;;
 esac
 
-unset PROMPT_COMMAND
+PROMPT_COMMAND="prompt_status"
 
 # ----------------------------------------------------------------
 # Misc Functions
@@ -96,7 +96,7 @@ unset -f update_terminal_cwd
 prompt_status () 
 { 
     local e=$?;
-    [ $e != 0 ] && echo -e "$e "
+    [ $e != 0 ] && echo -n -e "\033[01;31m${e} "
 }
 
 function randpw { dd if=/dev/urandom bs=1 count=30 2>/dev/null | base64; }
