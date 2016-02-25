@@ -1,5 +1,4 @@
 
-alias md5sum='md5'
 alias screenlock='open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
 
 # Show/hide hidden files in Finder
