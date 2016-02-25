@@ -5,6 +5,7 @@ LN_FILES=(
     .bashrc
     .npmrc
     .profile
+    .s3cfg
     .vimrc
 )
 
