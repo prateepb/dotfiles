@@ -13,11 +13,6 @@ elif [[ "$OSTYPE" =~ "darwin" ]]; then
     alias ls='ls -G'
 fi
 
-if [[ "$DESKTOP_SESSION" =~ "gnome" ]]
-then
-    alias screenlock='gnome-screensaver-command --activate'
-fi
-
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
