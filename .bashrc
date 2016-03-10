@@ -24,6 +24,10 @@ if [[ "$OSTYPE" =~ "darwin" && -f ~/.dotfiles/.bash_aliases_osx ]]; then
     . ~/.dotfiles/.bash_aliases_osx
 fi
 
+if [[ "$OSTYPE" =~ "linux" && -f ~/.dotfiles/.bash_aliases_linux ]]; then
+    . ~/.dotfiles/.bash_aliases_linux
+fi
+
 # ----------------------------------------------------------------
 # Environment
 
