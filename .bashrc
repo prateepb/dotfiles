@@ -119,3 +119,15 @@ if [[ "$OSTYPE" =~ "darwin" ]]; then
     function hdi_mount_ro { hdiutil attach $1 -readonly; }
     function hdi_mount_rw { hdiutil attach $1; }
 fi
+
+function meetingplanner {
+    CITIES='&p1=78&p2=224&p3=179&p4=240'
+
+    if [ -z "$1" ]; then
+        DATE=$( date '+%Y%m%d' )
+    else
+        DATE=$1
+    fi
+
+    $OPEN_COMMAND "http://www.timeanddate.com/worldclock/meetingtime.html?iso=${DATE}${CITIES}&iv=1800"
+}
