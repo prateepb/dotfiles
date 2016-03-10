@@ -33,7 +33,13 @@ fi
 
 # OSX Specific
 if [[ "$OSTYPE" =~ "darwin" ]]; then
+    OPEN_COMMAND="open"
     which -s brew && export BYOBU_PREFIX=$(brew --prefix)
+fi
+
+# Linux Specific
+if [[ "$OSTYPE" =~ "linux" ]]; then
+    OPEN_COMMAND="xdg-open"
 fi
 
 export EDITOR=vim
