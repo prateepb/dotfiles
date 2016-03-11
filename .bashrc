@@ -121,7 +121,12 @@ if [[ "$OSTYPE" =~ "darwin" ]]; then
 fi
 
 function meetingplanner {
-    [[ "$OSTYPE" =~ "darwin" ]] && DATE_COMMAND="gdate"
+    if [[ "$OSTYPE" =~ "darwin" ]]; then
+        DATE_COMMAND="gdate"
+    else
+        DATE_COMMAND="date"
+    fi
+
     CITIES='&p1=78&p2=224&p3=179&p4=240'
 
     if [ -z "$1" ]; then
