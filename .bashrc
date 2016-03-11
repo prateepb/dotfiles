@@ -121,12 +121,15 @@ if [[ "$OSTYPE" =~ "darwin" ]]; then
 fi
 
 function meetingplanner {
+    [[ "$OSTYPE" =~ "darwin" ]] && DATE_COMMAND="gdate"
     CITIES='&p1=78&p2=224&p3=179&p4=240'
 
     if [ -z "$1" ]; then
-        DATE=$( date '+%Y%m%d' )
-    else
+        DATE=$( $DATE_COMMAND '+%Y%m%d' )
+    elif [[ "$1" =~ [0-9]{8} ]]; then
         DATE=$1
+    else
+        DATE=$( $DATE_COMMAND --date "$1" '+%Y%m%d' )
     fi
 
     $OPEN_COMMAND "http://www.timeanddate.com/worldclock/meetingtime.html?iso=${DATE}${CITIES}&iv=1800"
