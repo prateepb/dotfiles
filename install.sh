@@ -2,6 +2,7 @@
 
 LN_FILES=(
     .bash_profile
+    .bash_sessions_disable
     .bashrc
     .npmrc
     .profile
