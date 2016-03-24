@@ -100,9 +100,9 @@ HISTIGNORE="exit:rm *:* *mp4"
 # Prompt
 
 if [ $UID -eq 0 ]; then
-    PS1="${RED}\u@\h${NO_COLOUR}:${BLUE}\w${NO_COLOUR}\$ "
+    PS1="\[${BOLD_RED}\]\$(exit_status)\u@\h\[${NO_COLOUR}\]:\[${BOLD_BLUE}\]\w\[${NO_COLOUR}\]\$ "
 else
-    PS1="${GREEN}\u@\h${NO_COLOUR}:${BLUE}\w${NO_COLOUR}\$ "
+    PS1="\[${BOLD_RED}\]\$(exit_status)\[${BOLD_GREEN}\]\u@\h\[${NO_COLOUR}\]:\[${BOLD_BLUE}\]\w\[${NO_COLOUR}\]\$ "
 fi
 
 # If this is an xterm set the title to user@host:dir
