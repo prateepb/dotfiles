@@ -119,38 +119,8 @@ PROMPT_COMMAND="prompt_status"
 # ----------------------------------------------------------------
 # Misc Functions
 
-unset -f update_terminal_cwd
+. ~/.dotfiles/.bash_functions
 
-prompt_status () 
-{ 
-    local e=$?;
-    [ $e != 0 ] && echo -n -e "\033[01;31m${e} "
-}
-
-function randpw { dd if=/dev/urandom bs=1 count=30 2>/dev/null | base64; }
-
-# OSX Specific
 if [[ "$OSTYPE" =~ "darwin" ]]; then
-    function hdi_mount_ro { hdiutil attach $1 -readonly; }
-    function hdi_mount_rw { hdiutil attach $1; }
+    . ~/.dotfiles/.bash_functions_osx
 fi
-
-function meetingplanner {
-    if [[ "$OSTYPE" =~ "darwin" ]]; then
-        DATE_COMMAND="gdate"
-    else
-        DATE_COMMAND="date"
-    fi
-
-    CITIES='&p1=78&p2=224&p3=179&p4=240'
-
-    if [ -z "$1" ]; then
-        DATE=$( $DATE_COMMAND '+%Y%m%d' )
-    elif [[ "$1" =~ [0-9]{8} ]]; then
-        DATE=$1
-    else
-        DATE=$( $DATE_COMMAND --date "$1" '+%Y%m%d' )
-    fi
-
-    $OPEN_COMMAND "http://www.timeanddate.com/worldclock/meetingtime.html?iso=${DATE}${CITIES}&iv=1800"
-}

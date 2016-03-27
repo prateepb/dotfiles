@@ -1,0 +1,17 @@
+
+unset -f update_terminal_cwd
+
+hdi_mount_ro () { hdiutil attach $1 -readonly; }
+hdi_mount_rw () { hdiutil attach $1; }
+
+check_secure_mounts () {     
+    if { \ls -d /Volumes/secure-* > /dev/null 2>&1; }; then
+        trap shell_history_clear EXIT
+    fi
+}
+
+shell_history_clear () {
+	cecho "[!] Clearing history for this session" $BOLD_RED	
+	history -c
+	sleep 3
+}
