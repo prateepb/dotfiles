@@ -114,7 +114,7 @@ xterm*|rxvt*)
     ;;
 esac
 
-PROMPT_COMMAND="prompt_status"
+[[ "$OSTYPE" =~ "darwin" ]] && PROMPT_COMMAND="check_secure_mounts"
 
 # ----------------------------------------------------------------
 # Misc Functions
