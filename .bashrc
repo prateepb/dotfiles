@@ -94,7 +94,7 @@ HISTFILESIZE=2000
 HISTTIMEFORMAT="%F %T "
 
 # Ignore the following commands
-HISTIGNORE="exit:rm *:* *mp4"
+HISTIGNORE="exit:rm *"
 
 # ----------------------------------------------------------------
 # Prompt
