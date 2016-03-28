@@ -37,6 +37,11 @@ if [[ "$OSTYPE" =~ "darwin" ]]; then
     which -s brew && export BYOBU_PREFIX=$(brew --prefix)
 fi
 
+if [[ -d "/usr/local/opt/coreutils/libexec" ]]; then
+    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+fi
+
 # Linux Specific
 if [[ "$OSTYPE" =~ "linux" ]]; then
     OPEN_COMMAND="xdg-open"
