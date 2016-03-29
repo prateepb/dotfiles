@@ -1,5 +1,12 @@
 # .bash_aliases
 
+# root aliases
+if [[ $EUID -eq 0 ]]; then
+    alias cp='cp -i'
+    alias mv='mv -i'
+    alias rm='rm -i'
+fi
+
 if [[ "$OSTYPE" =~ "darwin" && -x /usr/local/bin/gls && -x /usr/local/bin/gdircolors ]]; then
     test -r ~/.dotfiles/.dircolors && eval "$(gdircolors -b ~/.dotfiles/.dircolors)" || eval "$(gdircolors -b)"
     alias ll='gls -la --color=auto'
