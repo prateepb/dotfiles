@@ -79,7 +79,7 @@ export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 export LESS_ZZZZZZZZZZ=$'\E[0m'           # end mode
 
-export PACKER_CACHE_DIR="${HOME}/tmp/packer_cache"
+export PACKER_CACHE_DIR="${HOME}/var/packer_cache"
 
 # ----------------------------------------------------------------
 # History
