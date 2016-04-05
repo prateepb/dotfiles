@@ -6,7 +6,17 @@ hdi_mount_rw () { hdiutil attach $1; }
 
 check_secure_mounts () {     
     if { \ls -d /Volumes/secure-* > /dev/null 2>&1; }; then
+        if [[ -z "$PS1_ORIG" ]]; then
+            PS1_ORIG=$PS1
+            PS1="\n\[${BOLD_RED}\][*] Secure volume(s) mounted\n${PS1}"
+        fi
+
         trap shell_history_clear EXIT
+    else
+        if [[ -n "$PS1_ORIG" ]]; then
+            PS1=$PS1_ORIG
+            unset PS1_ORIG
+        fi
     fi
 }
 
