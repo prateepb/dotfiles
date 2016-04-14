@@ -23,5 +23,4 @@ check_secure_mounts () {
 shell_history_clear () {
 	cecho "[!] Clearing history for this session" $BOLD_RED	
 	history -c
-	sleep 3
 }
