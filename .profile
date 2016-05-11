@@ -1,6 +1,10 @@
 
 chmod 700 $HOME
-umask 0022
+if [[ $EUID -eq 0 ]]; then
+    umask 0077
+else
+    umask 0022
+fi
 
 # ----------------------------------------------------------------
 # Environment
