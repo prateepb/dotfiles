@@ -42,6 +42,10 @@ if [[ -d "/usr/local/opt/coreutils/libexec" ]]; then
     export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 fi
 
+if [[ -d "/usr/local/m-cli" ]]; then
+    export PATH="$PATH:/usr/local/m-cli"
+fi
+
 # Linux Specific
 if [[ "$OSTYPE" =~ "linux" ]]; then
     OPEN_COMMAND="xdg-open"
