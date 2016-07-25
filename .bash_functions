@@ -23,7 +23,7 @@ meetingplanner () {
         DATE_COMMAND="date"
     fi
 
-    CITIES='&p1=224&p2=179&p3=78&p4=37&p5=676&p6=240'
+    CITIES='&p1=224&p2=64&p3=179&p4=78&p5=37&p6=676&p7=240'
 
     if [ -z "$1" ]; then
         DATE=$( $DATE_COMMAND '+%Y%m%d' )
