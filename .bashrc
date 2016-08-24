@@ -109,7 +109,7 @@ HISTIGNORE="exit:rm *"
 # Prompt
 
 if [ $UID -eq 0 ]; then
-    PS1="\[${BOLD_RED}\]\$(exit_status)\u@\h\[${NO_COLOUR}\]:\[${BOLD_BLUE}\]\w\[${NO_COLOUR}\]\$ "
+    PS1="\[${BOLD_RED}\]\$(exit_status)\u@\h\[${NO_COLOUR}\]:\[${BOLD_BLUE}\]\w\[${NO_COLOUR}\]# "
 else
     PS1="\[${BOLD_RED}\]\$(exit_status)\[${BOLD_GREEN}\]\u@\h\[${NO_COLOUR}\]:\[${BOLD_BLUE}\]\w\[${NO_COLOUR}\]\$ "
 fi
