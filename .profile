@@ -32,6 +32,8 @@ fi
 # ----------------------------------------------------------------
 # Startup
 
+mesg n
+
 # Start xflux
 if [ -n "$DISPLAY" ] && [ -x $HOME/bin/xflux ]
 then
