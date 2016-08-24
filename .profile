@@ -9,6 +9,11 @@ fi
 # ----------------------------------------------------------------
 # Environment
 
+if [ -h /system/bin/bootkali ]
+then
+    PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/system/xbin
+fi
+
 PATH=$HOME/bin:$PATH
 
 if [ -d $HOME/opt ]
