@@ -8,7 +8,7 @@ check_secure_mounts () {
     if { \ls -d /Volumes/secure-* > /dev/null 2>&1; }; then
         if [[ -z "$PS1_ORIG" ]]; then
             PS1_ORIG=$PS1
-            PS1="\n\[${BOLD_RED}\][*] Secure volume(s) mounted\n${PS1}"
+            PS1="\[${BOLD_RED}\][!] ${PS1}"
         fi
 
         trap shell_history_clear EXIT
