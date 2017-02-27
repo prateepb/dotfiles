@@ -18,3 +18,6 @@ alias pumpitup="osascript -e 'set volume 7'"
 
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+[ -x /Applications/Meld.app/Contents/MacOS/Meld ] && alias meld="/Applications/Meld.app/Contents/MacOS/Meld"
+
