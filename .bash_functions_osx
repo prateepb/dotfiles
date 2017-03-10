@@ -24,3 +24,10 @@ shell_history_clear () {
 	cecho "[!] Clearing history for this session" $BOLD_RED	
 	history -c
 }
+
+hibernate () {
+    sudo pmset -a standbydelay 1
+    pmset sleepnow
+    sleep 180
+    sudo pmset -a standbydelay 10800
+}
