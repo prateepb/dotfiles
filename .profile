@@ -44,3 +44,15 @@ if [ -n "$DISPLAY" ] && [ -x $HOME/bin/xflux ]
 then
     $HOME/bin/xflux -l 53.3 -g -6.3 -k 3400
 fi
+
+# Display fortunes
+if ( which -s fortune ) && [ -d $HOME/usr/share/games/fortunes ]
+then
+    $HOME/usr/share/games/fortunes/motd.sh
+    cat $HOME/etc/motd
+elif ( which -s fortune )
+then
+    echo ""
+    fortune
+    echo ""
+fi
