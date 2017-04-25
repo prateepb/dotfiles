@@ -46,11 +46,11 @@ then
 fi
 
 # Display fortunes
-if ( which -s fortune ) && [ -d $HOME/usr/share/games/fortunes ]
+if ( which fortune > /dev/null 2>&1 ) && [ -d $HOME/usr/share/games/fortunes ]
 then
     $HOME/usr/share/games/fortunes/motd.sh
     cat $HOME/etc/motd
-elif ( which -s fortune )
+elif ( which fortune > /dev/null 2>&1 )
 then
     echo ""
     fortune
