@@ -1,6 +1,7 @@
 #!/bin/bash
 
 LN_FILES=(
+    .bash_logout
     .bash_profile
     .bash_sessions_disable
     .bashrc
