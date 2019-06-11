@@ -36,4 +36,5 @@ meetingplanner () {
     $OPEN_COMMAND "http://www.timeanddate.com/worldclock/meetingtime.html?iso=${DATE}${CITIES}&iv=1800"
 }
 
+myip () { curl -s https://ifconfig.me/ && echo; }
 randpw () { dd if=/dev/urandom bs=1 count=30 2>/dev/null | base64; }
